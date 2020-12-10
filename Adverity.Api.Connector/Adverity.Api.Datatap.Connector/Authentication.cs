@@ -41,7 +41,7 @@ namespace Adverity.Api.Datatap.Connector
         /// </summary>
         /// <param name="userName">User name</param>
         /// <param name="password">Password</param>
-        /// <returns></returns>
+        /// <returns>Token</returns>
         /// <exception cref="HttpRequestException">Unable to get an access token to Adverity Datatap API.</exception>
         public string GetToken(string userName, string password)
         {
@@ -63,7 +63,7 @@ namespace Adverity.Api.Datatap.Connector
         /// Getting a list of API endpoints
         /// </summary>
         /// <param name="token">Token</param>
-        /// <returns></returns>
+        /// <returns>List of endpoints</returns>
         /// <exception cref="HttpRequestException">Unable to get a list of endpoints to Adverity Datatap API.</exception>
         public Dictionary<string, string> GetEndpointsList(string token)
         {

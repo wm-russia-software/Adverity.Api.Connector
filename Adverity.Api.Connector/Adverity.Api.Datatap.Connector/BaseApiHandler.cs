@@ -48,7 +48,7 @@ namespace Adverity.Api.Datatap.Connector
         /// <typeparam name="T">Type</typeparam>
         /// <param name="url">Url</param>
         /// <param name="verb">Verb</param>
-        /// <returns></returns>
+        /// <returns>Data of type T</returns>
         /// <exception cref="HttpRequestException">Unable to get data from Adverity Datatap API with method {verb}. Url: {url}</exception>
         protected T GetDataFromApi<T>(string url, Method verb = Method.GET)
         {
@@ -64,11 +64,11 @@ namespace Adverity.Api.Datatap.Connector
         }
 
         /// <summary>
-        /// Gets  data from API
+        /// Gets data from API
         /// </summary>
         /// <param name="url">Url</param>
         /// <param name="verb">Verb</param>
-        /// <returns></returns>
+        /// <returns>Data from api as string</returns>
         /// <exception cref="HttpRequestException">Unable to get data from Adverity Datatap API with method {verb}. Url: {url}</exception>
         protected string GetDataFromApi(string url, Method verb = Method.GET)
         {

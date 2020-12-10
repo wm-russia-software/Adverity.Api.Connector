@@ -19,7 +19,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>F:\Work\2020\Библиотека для работы с Adverity API\Source\Adverity.Api.Connector\Adverity.Api.Connector\Adverity.Api.Datatap.Connector\Adverity.Api.Datatap.Connector.xml</DocumentationFile>
+    <DocumentationFile>F:\GitHub Wm-Russia-Software\Adverity.Api.Connector\Adverity.Api.Connector\Adverity.Api.Datatap.Connector\Adverity.Api.Datatap.Connector.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

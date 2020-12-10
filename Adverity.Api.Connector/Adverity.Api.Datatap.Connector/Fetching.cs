@@ -34,7 +34,7 @@ namespace Adverity.Api.Datatap.Connector
         /// <param name="datastreamId">Datastream id</param>
         /// <param name="startDate">Start date</param>
         /// <param name="endDate">End date</param>
-        /// <returns></returns>
+        /// <returns>Fetch result</returns>
         /// <exception cref="HttpRequestException">Unable to get data from Adverity Datatap API with method {Method.POST}. Url: {url}</exception>
         public string RunFetch(int datastreamId, DateTime startDate, DateTime endDate)
         {
@@ -57,7 +57,7 @@ namespace Adverity.Api.Datatap.Connector
         /// Gets data extracts list
         /// </summary>
         /// <param name="datastreamId">Datastream id</param>
-        /// <returns></returns>
+        /// <returns>Data extracts list</returns>
         public List<Extract> GetExtractsList(int datastreamId)
         {
             List<Extract> result = new List<Extract>();
@@ -79,7 +79,7 @@ namespace Adverity.Api.Datatap.Connector
         /// </summary>
         /// <param name="datastreamId">Datastream id</param>
         /// <param name="pageNumber">Page number</param>
-        /// <returns></returns>
+        /// <returns>Data extracts list</returns>
         public DataPagesContainer<Extract> GetExtractsList(int datastreamId, int pageNumber)
         {
             string url = UrlHelper.CombineUrls(ApiUrl, $@"api/extracts/?datastream_id={datastreamId}&page={pageNumber}");
@@ -89,7 +89,7 @@ namespace Adverity.Api.Datatap.Connector
         /// <summary>
         /// Gets all data extracts list
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Data extracts list</returns>
         public List<Extract> GetAllExtractsList()
         {
             List<Extract> result = new List<Extract>();
@@ -110,7 +110,7 @@ namespace Adverity.Api.Datatap.Connector
         /// Gets all data extracts list
         /// </summary>
         /// <param name="pageNumber">Page number</param>
-        /// <returns></returns>
+        /// <returns>Data extracts list</returns>
         public DataPagesContainer<Extract> GetAllExtractsList(int pageNumber)
         {
             string url = UrlHelper.CombineUrls(ApiUrl, $@"api/extracts/?page={pageNumber}");
@@ -121,7 +121,7 @@ namespace Adverity.Api.Datatap.Connector
         /// Get data extract in tsv format
         /// </summary>
         /// <param name="extractId">Data extract id</param>
-        /// <returns></returns>
+        /// <returns>Extract data as tsv</returns>
         public string GetExtract(int extractId)
         {
             string url = UrlHelper.CombineUrls(ApiUrl, $@"api/extracts/{extractId}/download/");
@@ -131,7 +131,7 @@ namespace Adverity.Api.Datatap.Connector
         /// <summary>
         /// Gets data collection errors/issues list
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of errors/issues</returns>
         public List<DataCollectionError> GetDataCollectionErrorsList()
         {
             List<DataCollectionError> result = new List<DataCollectionError>();
@@ -152,7 +152,7 @@ namespace Adverity.Api.Datatap.Connector
         /// Gets data collection errors/issues list
         /// </summary>
         /// <param name="pageNumber">Page number</param>
-        /// <returns></returns>
+        /// <returns>List of errors/issues</returns>
         public DataPagesContainer<DataCollectionError> GetDataCollectionErrorsList(int pageNumber)
         {
             string url = UrlHelper.CombineUrls(ApiUrl, $@"api/errors/?page={pageNumber}");

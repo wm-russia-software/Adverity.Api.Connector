@@ -16,8 +16,14 @@ namespace Adverity.Api.Connector.Tests.App
         /// <param name="args">Arguments</param>
         private static void Main(string[] args)
         {
-            Fetching api = new Fetching(Settings.AdverityApiUrl, Settings.AdverityApiToken);
-            List<DataCollectionError> result = api.GetDataCollectionErrorsList();
+            //string token = new Authentication(Settings.AdverityApiUrl).GetToken(yourUserName, yourPassword);
+            
+            List<Datastream> datastreams = new Datastreams(Settings.AdverityApiUrl, Settings.AdverityApiToken).GetDatastreamsList();
+
+            Fetching fetchingApi = new Fetching(Settings.AdverityApiUrl, Settings.AdverityApiToken);
+            List<Extract> extracts = fetchingApi.GetAllExtractsList();
+            //string tsv = fetchingApi.GetExtract(extractId);
+            List<DataCollectionError> errors = fetchingApi.GetDataCollectionErrorsList();
 
             Console.WriteLine("Press any key...");
             Console.ReadKey();

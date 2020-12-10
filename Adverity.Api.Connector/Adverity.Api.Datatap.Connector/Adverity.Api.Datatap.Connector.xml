@@ -1,0 +1,830 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Adverity.Api.Datatap.Connector</name>
+    </assembly>
+    <members>
+        <member name="T:Adverity.Api.Datatap.Connector.Authentication">
+            <summary>
+            Authentication handler
+            </summary>
+        </member>
+        <member name="F:Adverity.Api.Datatap.Connector.Authentication._apiUrl">
+            <summary>
+            API url
+            </summary>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Authentication.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adverity.Api.Datatap.Connector.Authentication"/> class.
+            </summary>
+            <param name="apiUrl">API url</param>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Authentication.GetToken(System.String,System.String)">
+            <summary>
+            Getting token
+            </summary>
+            <param name="userName">User name</param>
+            <param name="password">Password</param>
+            <returns>Token</returns>
+            <exception cref="T:System.Net.Http.HttpRequestException">Unable to get an access token to Adverity Datatap API.</exception>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Authentication.GetEndpointsList(System.String)">
+            <summary>
+            Getting a list of API endpoints
+            </summary>
+            <param name="token">Token</param>
+            <returns>List of endpoints</returns>
+            <exception cref="T:System.Net.Http.HttpRequestException">Unable to get a list of endpoints to Adverity Datatap API.</exception>
+        </member>
+        <member name="T:Adverity.Api.Datatap.Connector.BaseApiHandler">
+            <summary>
+            Base api handler class
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.BaseApiHandler.ApiUrl">
+            <summary>
+            API url
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.BaseApiHandler.Token">
+            <summary>
+            Token
+            </summary>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.BaseApiHandler.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adverity.Api.Datatap.Connector.BaseApiHandler"/> class.
+            </summary>
+            <param name="apiUrl">API url</param>
+            <param name="token">Token</param>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.BaseApiHandler.GetDataFromApi``1(System.String,RestSharp.Method)">
+            <summary>
+            Gets data from API
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="url">Url</param>
+            <param name="verb">Verb</param>
+            <returns>Data of type T</returns>
+            <exception cref="T:System.Net.Http.HttpRequestException">Unable to get data from Adverity Datatap API with method {verb}. Url: {url}</exception>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.BaseApiHandler.GetDataFromApi(System.String,RestSharp.Method)">
+            <summary>
+            Gets data from API
+            </summary>
+            <param name="url">Url</param>
+            <param name="verb">Verb</param>
+            <returns>Data from api as string</returns>
+            <exception cref="T:System.Net.Http.HttpRequestException">Unable to get data from Adverity Datatap API with method {verb}. Url: {url}</exception>
+        </member>
+        <member name="T:Adverity.Api.Datatap.Connector.Connections">
+            <summary>
+            Connections handler
+            </summary>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Connections.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adverity.Api.Datatap.Connector.Connections"/> class.
+            </summary>
+            <param name="apiUrl">API url</param>
+            <param name="token">Token</param>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Connections.GetConnectionTypesList">
+            <summary>
+            Gets connection types list
+            </summary>
+            <returns>List of connection types</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Connections.GetConnectionTypesList(System.Int32)">
+            <summary>
+            Gets connection types list
+            </summary>
+            <param name="pageNumber">Page number</param>
+            <returns>List of connection types</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Connections.GetConnectionsList(System.Int32)">
+            <summary>
+            Gets connections list
+            </summary>
+            <param name="connectionTypeId">Connection type id</param>
+            <returns>List of connections</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Connections.GetConnectionsList(System.Int32,System.Int32)">
+            <summary>
+            Gets connections list
+            </summary>
+            <param name="connectionTypeId">Connection type id</param>
+            <param name="pageNumber">Page number</param>
+            <returns>List of connections</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Connections.GetConnectionOptions(System.Int32)">
+            <summary>
+            Gets connection options
+            </summary>
+            <param name="connectionTypeId">Connection type id</param>
+            <returns>Connection options</returns>
+        </member>
+        <member name="T:Adverity.Api.Datatap.Connector.Datastreams">
+            <summary>
+            Datastreams handler
+            </summary>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Datastreams.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adverity.Api.Datatap.Connector.Datastreams"/> class.
+            </summary>
+            <param name="apiUrl">API url</param>
+            <param name="token">Token</param>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Datastreams.GetDatastreamTypesList">
+            <summary>
+            Gets datastream types list
+            </summary>
+            <returns>List of datastream types</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Datastreams.GetDatastreamTypesList(System.Int32)">
+            <summary>
+            Gets datastream types list
+            </summary>
+            <param name="pageNumber">Page number</param>
+            <returns>List of datastream types</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Datastreams.GetDatastreamsList">
+            <summary>
+            Gets datastreams list
+            </summary>
+            <returns>List of datastreams</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Datastreams.GetDatastreamsList(System.Int32)">
+            <summary>
+            Gets datastreams list
+            </summary>
+            <param name="pageNumber">Page number</param>
+            <returns>List of datastreams</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Datastreams.GetDatastreamsListByType(System.Int32)">
+            <summary>
+            Gets datastreams list by type
+            </summary>
+            <param name="dataStreamTypeId">Datastream type id</param>
+            <returns>List of datastreams</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Datastreams.GetDatastreamsList(System.Int32,System.Int32)">
+            <summary>
+            Gets datastreams list
+            </summary>
+            <param name="datastreamTypeId">Datastream type id</param>
+            <param name="pageNumber">Page number</param>
+            <returns>List of datastreams</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Datastreams.GetDatastreamOptions(System.Int32)">
+            <summary>
+            Gets datastreams options
+            </summary>
+            <param name="dataStreamTypeId">Datastream type id</param>
+            <returns>Datastream options</returns>
+        </member>
+        <member name="T:Adverity.Api.Datatap.Connector.Fetching">
+            <summary>
+            Fetching handler
+            </summary>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Fetching.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adverity.Api.Datatap.Connector.Fetching"/> class.
+            </summary>
+            <param name="apiUrl">API url</param>
+            <param name="token">Token</param>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Fetching.RunFetch(System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Starts data fetching
+            </summary>
+            <param name="datastreamId">Datastream id</param>
+            <param name="startDate">Start date</param>
+            <param name="endDate">End date</param>
+            <returns>Fetch result</returns>
+            <exception cref="T:System.Net.Http.HttpRequestException">Unable to get data from Adverity Datatap API with method {Method.POST}. Url: {url}</exception>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Fetching.GetExtractsList(System.Int32)">
+            <summary>
+            Gets data extracts list
+            </summary>
+            <param name="datastreamId">Datastream id</param>
+            <returns>Data extracts list</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Fetching.GetExtractsList(System.Int32,System.Int32)">
+            <summary>
+            Gets data extracts lists
+            </summary>
+            <param name="datastreamId">Datastream id</param>
+            <param name="pageNumber">Page number</param>
+            <returns>Data extracts list</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Fetching.GetAllExtractsList">
+            <summary>
+            Gets all data extracts list
+            </summary>
+            <returns>Data extracts list</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Fetching.GetAllExtractsList(System.Int32)">
+            <summary>
+            Gets all data extracts list
+            </summary>
+            <param name="pageNumber">Page number</param>
+            <returns>Data extracts list</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Fetching.GetExtract(System.Int32)">
+            <summary>
+            Get data extract in tsv format
+            </summary>
+            <param name="extractId">Data extract id</param>
+            <returns>Extract data as tsv</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Fetching.GetDataCollectionErrorsList">
+            <summary>
+            Gets data collection errors/issues list
+            </summary>
+            <returns>List of errors/issues</returns>
+        </member>
+        <member name="M:Adverity.Api.Datatap.Connector.Fetching.GetDataCollectionErrorsList(System.Int32)">
+            <summary>
+            Gets data collection errors/issues list
+            </summary>
+            <param name="pageNumber">Page number</param>
+            <returns>List of errors/issues</returns>
+        </member>
+        <member name="T:Adverity.Api.Datatap.Connector.Models.Connection">
+            <summary>
+            Connection
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Connection.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Connection.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Connection.IsAgency">
+            <summary>
+            Is agency account 
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Connection.ClientLogin">
+            <summary>
+            Client login
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Connection.Stack">
+            <summary>
+            Stack
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Connection.App">
+            <summary>
+            Application id
+            </summary>
+        </member>
+        <member name="T:Adverity.Api.Datatap.Connector.Models.ConnectionType">
+            <summary>
+            Connection type
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.ConnectionType.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.ConnectionType.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.ConnectionType.Slug">
+            <summary>
+            Inner name
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.ConnectionType.Url">
+            <summary>
+            Url
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.ConnectionType.Connections">
+            <summary>
+            Query string to the API to get connections
+            </summary>
+        </member>
+        <member name="T:Adverity.Api.Datatap.Connector.Models.DataCollectionError">
+            <summary>
+            Data collection error
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.Start">
+            <summary>
+            Start date of the extract which generated error
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.End">
+            <summary>
+            End date of the extract which generated error
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.Message">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.TypeLabel">
+            <summary>
+            Type
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.Datastream">
+            <summary>
+            Datastream
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.Extract">
+            <summary>
+            Extract
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.Ack">
+            <summary>
+            Is error acknowledged
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.AckUrl">
+            <summary>
+            Url for acknowledgement action
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.AckGroupUrl">
+            <summary>
+            Url for group acknowledgement action
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.RetryUrl">
+            <summary>
+            Url for retry action
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.RetryGroupUrl">
+            <summary>
+            Url for group retry action
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.Url">
+            <summary>
+            Url
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.Job">
+            <summary>
+            Data gathering job
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.MappingTableChangeUrl">
+            <summary>
+            Url for mapping table change
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.MappingEntriesChangeUrl">
+            <summary>
+            Url for mapping entries change
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.TargetColumnChangeUrl">
+            <summary>
+            Url for target column change
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.TransformationConfigUrl">
+            <summary>
+            Url for transformation config
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.DatastreamInsightsUrl">
+            <summary>
+            Url for datastram insights
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataCollectionError.Occurrences">
+            <summary>
+            Number of occurrences
+            </summary>
+        </member>
+        <member name="T:Adverity.Api.Datatap.Connector.Models.DataPagesContainer`1">
+            <summary>
+            Container for data with paging
+            </summary>
+            <typeparam name="T">Container data type</typeparam>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataPagesContainer`1.Count">
+            <summary>
+            Number of elements
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataPagesContainer`1.NextPage">
+            <summary>
+            Api request url for getting next page
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataPagesContainer`1.PreviousPage">
+            <summary>
+            Api request url for getting previous page
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DataPagesContainer`1.Results">
+            <summary>
+            Results
+            </summary>
+        </member>
+        <member name="T:Adverity.Api.Datatap.Connector.Models.Datastream">
+            <summary>
+            Datastream
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.Stack">
+            <summary>
+            Stack
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.StackId">
+            <summary>
+            Stack id
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.Slug">
+            <summary>
+            Inner name
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.AppLabel">
+            <summary>
+            Application label
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.AbsoluteUrl">
+            <summary>
+            Absolute Url
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.ChangeUrl">
+            <summary>
+            Url for changing action
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.ExtractsUrl">
+            <summary>
+            Url for extracts
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.FetchUrl">
+            <summary>
+            Url for fetch action
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.OverviewUrl">
+            <summary>
+            Url for overview
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.Enabled">
+            <summary>
+            Is enabled
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.NextRunDateTime">
+            <summary>
+            Date nad time for the next run
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.Url">
+            <summary>
+            Url
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.DatastreamTypeId">
+            <summary>
+            Datastream type id
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.LogoUrl">
+            <summary>
+            Logo url
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.ExtractsStreamUrl">
+            <summary>
+            Url for extracts stream
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.SupportsExtendedIntervals">
+            <summary>
+            Is extended intervals supported
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.Updated">
+            <summary>
+            Date and time of last update
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Datastream.Creator">
+            <summary>
+            Creator username
+            </summary>
+        </member>
+        <member name="T:Adverity.Api.Datatap.Connector.Models.DatastreamPermissions">
+            <summary>
+            Datastream permissions
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamPermissions.IsDatastreamManager">
+            <summary>
+            Is user manager of datastream
+            </summary>
+        </member>
+        <member name="T:Adverity.Api.Datatap.Connector.Models.DatastreamStack">
+            <summary>
+            Datastream stack
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamStack.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamStack.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamStack.Slug">
+            <summary>
+            Inner name
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamStack.Url">
+            <summary>
+            Url
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamStack.ChangeUrl">
+            <summary>
+            Url for change action
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamStack.ExtractsUrl">
+            <summary>
+            Url for accessing extracts
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamStack.IssuesUrl">
+            <summary>
+            Url for accessing issues
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamStack.OverviewUrl">
+            <summary>
+            Url for overview
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamStack.Permissions">
+            <summary>
+            Permissions
+            </summary>
+        </member>
+        <member name="T:Adverity.Api.Datatap.Connector.Models.DatastreamType">
+            <summary>
+            Datastream type
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamType.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamType.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamType.Slug">
+            <summary>
+            Inner name
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamType.Url">
+            <summary>
+            Url
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamType.Datastreams">
+            <summary>
+            Datastreams
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamType.ConnectionTypes">
+            <summary>
+            Connection types
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamType.CreateUrl">
+            <summary>
+            Url for create action
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.DatastreamType.LogoUrl">
+            <summary>
+            Logo url
+            </summary>
+        </member>
+        <member name="T:Adverity.Api.Datatap.Connector.Models.Extract">
+            <summary>
+            Data extract
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.Created">
+            <summary>
+            Creation date and time
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.Datastream">
+            <summary>
+            Datastream
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.Scheduled">
+            <summary>
+            Date and time of scheduled run
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.RowsQuantity">
+            <summary>
+            Rows quantity
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.ColumnsQuantity">
+            <summary>
+            Columns quantity
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.FileSize">
+            <summary>
+            File size
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.StateLabel">
+            <summary>
+            State
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.StateColor">
+            <summary>
+            State color
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.PreviewUrl">
+            <summary>
+            Url for extract preview
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.RefetchUrl">
+            <summary>
+            Url for refetching action
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.RequeueUrl">
+            <summary>
+            Url for requeue
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.DownloadUrl">
+            <summary>
+            Url for extract download
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.Metadata">
+            <summary>
+            Metadata
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.Tags">
+            <summary>
+            Tags
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.ExploreUrl">
+            <summary>
+            Url for explore
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Extract.DashboardUrl">
+            <summary>
+            Url for dashboard access
+            </summary>
+        </member>
+        <member name="T:Adverity.Api.Datatap.Connector.Models.ExtractMetadata">
+            <summary>
+            Extracts metadata
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.ExtractMetadata.Pivots">
+            <summary>
+            Pivots
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.ExtractMetadata.DatastreamExtractRangeEnd">
+            <summary>
+            Datastreams extract range end data
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.ExtractMetadata.OriginJobId">
+            <summary>
+            Job id
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.ExtractMetadata.DatastreamExtractRangeStart">
+            <summary>
+            Datastreams extract range start data
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.ExtractMetadata.ManagedName">
+            <summary>
+            Managed name
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.ExtractMetadata.ExtractDate">
+            <summary>
+            Date of the extract
+            </summary>
+        </member>
+        <member name="T:Adverity.Api.Datatap.Connector.Models.Job">
+            <summary>
+            Data gathering job
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Job.Url">
+            <summary>
+            Url
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Job.JobStart">
+            <summary>
+            Date and time of job start
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Job.JobEnd">
+            <summary>
+            Date and time of job end
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Job.RangeStart">
+            <summary>
+            Data extract range start date
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Job.RangeEnd">
+            <summary>
+            Data extract range end date
+            </summary>
+        </member>
+        <member name="P:Adverity.Api.Datatap.Connector.Models.Job.Scheduled">
+            <summary>
+            Date and time of scheduled run
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -28,7 +28,7 @@ namespace Adverity.Api.Datatap.Connector
         /// <summary>
         /// Gets datastream types list
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of datastream types</returns>
         public List<DatastreamType> GetDatastreamTypesList()
         {
             List<DatastreamType> result = new List<DatastreamType>();
@@ -49,7 +49,7 @@ namespace Adverity.Api.Datatap.Connector
         /// Gets datastream types list
         /// </summary>
         /// <param name="pageNumber">Page number</param>
-        /// <returns></returns>
+        /// <returns>List of datastream types</returns>
         public DataPagesContainer<DatastreamType> GetDatastreamTypesList(int pageNumber)
         {
             string url = UrlHelper.CombineUrls(ApiUrl, $@"api/datastream-types/?page={pageNumber}");
@@ -59,7 +59,7 @@ namespace Adverity.Api.Datatap.Connector
         /// <summary>
         /// Gets datastreams list
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of datastreams</returns>
         public List<Datastream> GetDatastreamsList()
         {
             List<Datastream> result = new List<Datastream>();
@@ -80,7 +80,7 @@ namespace Adverity.Api.Datatap.Connector
         /// Gets datastreams list
         /// </summary>
         /// <param name="pageNumber">Page number</param>
-        /// <returns></returns>
+        /// <returns>List of datastreams</returns>
         public DataPagesContainer<Datastream> GetDatastreamsList(int pageNumber)
         {
             string url = UrlHelper.CombineUrls(ApiUrl, $@"api/datastreams/?page={pageNumber}");
@@ -91,7 +91,7 @@ namespace Adverity.Api.Datatap.Connector
         /// Gets datastreams list by type
         /// </summary>
         /// <param name="dataStreamTypeId">Datastream type id</param>
-        /// <returns></returns>
+        /// <returns>List of datastreams</returns>
         public List<Datastream> GetDatastreamsListByType(int dataStreamTypeId)
         {
             List<Datastream> result = new List<Datastream>();
@@ -113,7 +113,7 @@ namespace Adverity.Api.Datatap.Connector
         /// </summary>
         /// <param name="datastreamTypeId">Datastream type id</param>
         /// <param name="pageNumber">Page number</param>
-        /// <returns></returns>
+        /// <returns>List of datastreams</returns>
         public DataPagesContainer<Datastream> GetDatastreamsList(int datastreamTypeId, int pageNumber)
         {
             string url = UrlHelper.CombineUrls(ApiUrl, $@"api/datastream-types/{datastreamTypeId}/datastreams/?page={pageNumber}");
@@ -124,7 +124,7 @@ namespace Adverity.Api.Datatap.Connector
         /// Gets datastreams options
         /// </summary>
         /// <param name="dataStreamTypeId">Datastream type id</param>
-        /// <returns></returns>
+        /// <returns>Datastream options</returns>
         public string GetDatastreamOptions(int dataStreamTypeId)
         {
             string url = UrlHelper.CombineUrls(ApiUrl, $@"api/datastream-types/{dataStreamTypeId}/datastreams/");

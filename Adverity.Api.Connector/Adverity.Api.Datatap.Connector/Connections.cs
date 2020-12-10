@@ -28,7 +28,7 @@ namespace Adverity.Api.Datatap.Connector
         /// <summary>
         /// Gets connection types list
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of connection types</returns>
         public List<ConnectionType> GetConnectionTypesList()
         {
             List<ConnectionType> result = new List<ConnectionType>();
@@ -49,7 +49,7 @@ namespace Adverity.Api.Datatap.Connector
         /// Gets connection types list
         /// </summary>
         /// <param name="pageNumber">Page number</param>
-        /// <returns></returns>
+        /// <returns>List of connection types</returns>
         public DataPagesContainer<ConnectionType> GetConnectionTypesList(int pageNumber)
         {
             string url = UrlHelper.CombineUrls(ApiUrl, $@"api/connection-types/?page={pageNumber}");
@@ -60,7 +60,7 @@ namespace Adverity.Api.Datatap.Connector
         /// Gets connections list
         /// </summary>
         /// <param name="connectionTypeId">Connection type id</param>
-        /// <returns></returns>
+        /// <returns>List of connections</returns>
         public List<Connection> GetConnectionsList(int connectionTypeId)
         {
             List<Connection> result = new List<Connection>();
@@ -82,7 +82,7 @@ namespace Adverity.Api.Datatap.Connector
         /// </summary>
         /// <param name="connectionTypeId">Connection type id</param>
         /// <param name="pageNumber">Page number</param>
-        /// <returns></returns>
+        /// <returns>List of connections</returns>
         public DataPagesContainer<Connection> GetConnectionsList(int connectionTypeId, int pageNumber)
         {
             string url = UrlHelper.CombineUrls(ApiUrl, $@"api/connection-types/{connectionTypeId}/connections/?page={pageNumber}");
@@ -93,7 +93,7 @@ namespace Adverity.Api.Datatap.Connector
         /// Gets connection options
         /// </summary>
         /// <param name="connectionTypeId">Connection type id</param>
-        /// <returns></returns>
+        /// <returns>Connection options</returns>
         public string GetConnectionOptions(int connectionTypeId)
         {
             string url = UrlHelper.CombineUrls(ApiUrl, $@"api/connection-types/{connectionTypeId}/connections/");
