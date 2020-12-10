@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>StrongKey.snk</AssemblyOriginatorKeyFile>
+    <Authors>Wavemaker</Authors>
+    <Description>Library provides functionality for connecting and using methods of Adverity Datatap API.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.5</Version>
+    <Copyright>Copyright © Wavemaker 2020</Copyright>
+    <AssemblyVersion>1.0.5.0</AssemblyVersion>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageTags>wavemaker adverity datatap api connector wm</PackageTags>
+    <PackageProjectUrl>https://github.com/wm-russia-software/Adverity.Api.Connector</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/wm-russia-software/Adverity.Api.Connector</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>F:\Work\2020\Библиотека для работы с Adverity API\Source\Adverity.Api.Connector\Adverity.Api.Connector\Adverity.Api.Datatap.Connector\Adverity.Api.Datatap.Connector.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ak.Framework.Core" Version="2.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="RestSharp" Version="106.10.1" />
+  </ItemGroup>
+
+</Project>
